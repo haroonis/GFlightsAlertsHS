@@ -1,7 +1,7 @@
 services:
   - type: web
     name: flight-scraper
-    runtime: python3
+    runtime: python
     buildCommand: pip install -r requirements.txt
     startCommand: python flight_scraper.py
     envVars:
@@ -12,7 +12,7 @@ services:
 
   - type: cron
     name: flight-scraper-cron
-    runtime: python3
+    runtime: python
     buildCommand: pip install -r requirements.txt
     schedule: "0 6,10,14,18,22 * * *"
     startCommand: python flight_scraper.py
@@ -21,3 +21,4 @@ services:
         value: YOUR_BOT_TOKEN_HERE
       - key: TELEGRAM_CHAT_ID
         value: YOUR_CHAT_ID_HERE
+

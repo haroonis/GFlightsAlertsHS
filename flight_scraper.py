@@ -29,7 +29,7 @@ NUM_THREADS = 5
 EXCEL_LOCK = threading.Lock()
 
 # --- Telegram configuration ---
-TELEGRAM_BOT_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN', '8270013756:AAHYrACY96T2BKsSFpo1FV3_TaJo-dvCcTY')
+TELEGRAM_BOT_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN', '')
 TELEGRAM_CHAT_ID = os.environ.get('TELEGRAM_CHAT_ID', '105756568')
 TELEGRAM_ALERT_THRESHOLD = float(os.environ.get('TELEGRAM_ALERT_THRESHOLD', '0.01'))
 
@@ -601,3 +601,4 @@ def scrape_flights(url, driver=None):
                 logging.error(f"Chrome driver quit failed: {e}")
 
     return flights_saved
+
